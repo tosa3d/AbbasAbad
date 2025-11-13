@@ -1,372 +1,393 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>برآورد هزینه پروژه - نسخه کامل</title>
-  <link rel="preload" href="assets/fonts/Lahze-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برآورد هزینه پروژه - نسخه کامل</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>برآورد هزینه پروژه - نسخه کامل</h1>
-    <div id="save-status">💾 در حال ذخیره...</div>
-  </header>
+    <div class="container">
+        <h1>💰 برآورد هزینه پروژه - نسخه کامل</h1>
 
-  <main>
-    <section class="scenario" id="scenario-a">
-      <h2>📱 سناریو A: فقط Beacon</h2>
+        <div class="save-indicator" id="saveIndicator">💾 ذخیره شد</div>
 
-      <h3>سخت‌افزار</h3>
-      <table class="table hardware">
-        <thead>
-          <tr>
-            <th>قلم</th>
-            <th>تعداد</th>
-            <th>قیمت واحد ($)</th>
-            <th>جمع ($)</th>
-            <th>عملیات</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td contenteditable data-key="a.hw.item1"></td>
-            <td contenteditable data-key="a.hw.qty1"></td>
-            <td contenteditable data-key="a.hw.unit1"></td>
-            <td contenteditable data-key="a.hw.sum1">950</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td contenteditable data-key="a.hw.item2"></td>
-            <td contenteditable data-key="a.hw.qty2"></td>
-            <td contenteditable data-key="a.hw.unit2"></td>
-            <td contenteditable data-key="a.hw.sum2">100</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td contenteditable data-key="a.hw.item3"></td>
-            <td contenteditable data-key="a.hw.qty3"></td>
-            <td contenteditable data-key="a.hw.unit3"></td>
-            <td contenteditable data-key="a.hw.sum3">200</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td contenteditable data-key="a.hw.item4"></td>
-            <td contenteditable data-key="a.hw.qty4"></td>
-            <td contenteditable data-key="a.hw.unit4"></td>
-            <td contenteditable data-key="a.hw.sum4">125</td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">جمع سخت‌افزار</td>
-            <td contenteditable data-key="a.hw.total">1375</td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="scenarioA">📱 سناریو A</button>
+            <button class="tab-btn" data-tab="scenarioB">🌍 سناریو B ⭐</button>
+            <button class="tab-btn" data-tab="scenarioC">⭐ سناریو C ⭐⭐</button>
+            <button class="tab-btn" data-tab="comparison">📊 مقایسه</button>
+        </div>
 
-      <h3>نصب</h3>
-      <table class="table install">
-        <thead>
-          <tr>
-            <th>قلم</th>
-            <th>مدت</th>
-            <th>هزینه ($)</th>
-            <th>عملیات</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td contenteditable data-key="a.ins.item1"></td>
-            <td contenteditable data-key="a.ins.time1"></td>
-            <td contenteditable data-key="a.ins.cost1"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td contenteditable data-key="a.ins.item2"></td>
-            <td contenteditable data-key="a.ins.time2"></td>
-            <td contenteditable data-key="a.ins.cost2"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td contenteditable data-key="a.ins.item3"></td>
-            <td contenteditable data-key="a.ins.time3"></td>
-            <td contenteditable data-key="a.ins.cost3"></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2">جمع نصب</td>
-            <td contenteditable data-key="a.ins.total">840</td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
+        <!-- سناریو A -->
+        <div class="tab-content active" id="scenarioA">
+            <h2>📱 سناریو A: فقط Beacon</h2>
 
-      <h3>توسعه نرم‌افزار</h3>
-      <table class="table dev">
-        <thead>
-          <tr>
-            <th>فاز</th>
-            <th>زمان</th>
-            <th>هزینه ($)</th>
-            <th>عملیات</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 8+6 ردیف خالی به‌همراه مدل پراپ؛ قابل ویرایش -->
-          <tr><td contenteditable data-key="a.dev.r1.phase"></td><td contenteditable data-key="a.dev.r1.time"></td><td contenteditable data-key="a.dev.r1.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r2.phase"></td><td contenteditable data-key="a.dev.r2.time"></td><td contenteditable data-key="a.dev.r2.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r3.phase"></td><td contenteditable data-key="a.dev.r3.time"></td><td contenteditable data-key="a.dev.r3.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r4.phase"></td><td contenteditable data-key="a.dev.r4.time"></td><td contenteditable data-key="a.dev.r4.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r5.phase"></td><td contenteditable data-key="a.dev.r5.time"></td><td contenteditable data-key="a.dev.r5.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r6.phase"></td><td contenteditable data-key="a.dev.r6.time"></td><td contenteditable data-key="a.dev.r6.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r7.phase"></td><td contenteditable data-key="a.dev.r7.time"></td><td contenteditable data-key="a.dev.r7.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r8.phase"></td><td contenteditable data-key="a.dev.r8.time"></td><td contenteditable data-key="a.dev.r8.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.dev.r9.phase"></td><td contenteditable data-key="a.dev.r9.time"></td><td contenteditable data-key="a.dev.r9.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.model.r1.phase"></td><td contenteditable data-key="a.model.r1.time"></td><td contenteditable data-key="a.model.r1.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.model.r2.phase"></td><td contenteditable data-key="a.model.r2.time"></td><td contenteditable data-key="a.model.r2.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.model.r3.phase"></td><td contenteditable data-key="a.model.r3.time"></td><td contenteditable data-key="a.model.r3.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.model.r4.phase"></td><td contenteditable data-key="a.model.r4.time"></td><td contenteditable data-key="a.model.r4.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.model.r5.phase"></td><td contenteditable data-key="a.model.r5.time"></td><td contenteditable data-key="a.model.r5.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="a.model.r6.phase"></td><td contenteditable data-key="a.model.r6.time"></td><td contenteditable data-key="a.model.r6.cost"></td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2">جمع توسعه (24 هفته)</td>
-            <td contenteditable data-key="a.dev.total">18100</td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
+            <div class="section">
+                <h3>سخت‌افزار</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>تعداد</th>
+                            <th>قیمت واحد ($)</th>
+                            <th>جمع ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hardwareA">
+                        <!-- ردیف‌ها با JavaScript اضافه می‌شوند -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>جمع سخت‌افزار</strong></td>
+                            <td class="total" id="totalHardwareA">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('hardwareA', 'hardware')">+ افزودن ردیف</button>
+            </div>
 
-      <p class="sum">💰 جمع کل سناریو A: <strong contenteditable data-key="a.total">20315</strong> دلار</p>
+            <div class="section">
+                <h3>نصب</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>مدت</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="installationA">
+                        <!-- ردیف‌ها با JavaScript اضافه می‌شوند -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>جمع نصب</strong></td>
+                            <td class="total" id="totalInstallationA">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('installationA', 'installation')">+ افزودن ردیف</button>
+            </div>
 
-      <h3>نگهداری سالانه</h3>
-      <table class="table maintenance">
-        <thead>
-          <tr><th>نگهداری سالانه</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>تعویض باتری | <span contenteditable data-key="a.m.battery">100</span> $</td></tr>
-          <tr><td>بازرسی فصلی | <span contenteditable data-key="a.m.season">200</span> $</td></tr>
-          <tr><td>بروزرسانی اپ | <span contenteditable data-key="a.m.app">1200</span> $</td></tr>
-          <tr><td>پشتیبانی فنی | <span contenteditable data-key="a.m.support">800</span> $</span></td></tr>
-          <tr><td>سرور و Cloud | <span contenteditable data-key="a.m.cloud">900</span> $</td></tr>
-          <tr><td>جمع نگهداری سالانه | <span contenteditable data-key="a.m.total">3200</span> $</td></tr>
-        </tbody>
-      </table>
-    </section>
+            <div class="section">
+                <h3>توسعه نرم‌افزار</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>فاز</th>
+                            <th>زمان</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="developmentA">
+                        <!-- ردیف‌ها با JavaScript اضافه می‌شوند -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>جمع توسعه</strong></td>
+                            <td class="total" id="totalDevelopmentA">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('developmentA', 'development')">+ افزودن ردیف</button>
+            </div>
 
-    <section class="scenario" id="scenario-b">
-      <h2>🌍 سناریو B: GPS + Beacon ⭐</h2>
-      <h3>سخت‌افزار</h3>
-      <table class="table hardware">
-        <thead>
-          <tr>
-            <th>قلم</th><th>تعداد</th><th>قیمت واحد ($)</th><th>جمع ($)</th><th>عملیات</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td contenteditable data-key="b.hw.item1"></td><td contenteditable data-key="b.hw.qty1"></td><td contenteditable data-key="b.hw.unit1"></td><td contenteditable data-key="b.hw.sum1">760</td><td></td></tr>
-          <tr><td contenteditable data-key="b.hw.item2"></td><td contenteditable data-key="b.hw.qty2"></td><td contenteditable data-key="b.hw.unit2"></td><td contenteditable data-key="b.hw.sum2">80</td><td></td></tr>
-          <tr><td contenteditable data-key="b.hw.item3"></td><td contenteditable data-key="b.hw.qty3"></td><td contenteditable data-key="b.hw.unit3"></td><td contenteditable data-key="b.hw.sum3">160</td><td></td></tr>
-          <tr><td contenteditable data-key="b.hw.item4"></td><td contenteditable data-key="b.hw.qty4"></td><td contenteditable data-key="b.hw.unit4"></td><td contenteditable data-key="b.hw.sum4">100</td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="3">جمع سخت‌افزار</td><td contenteditable data-key="b.hw.total">1100</td><td></td></tr>
-        </tfoot>
-      </table>
+            <div class="total-section">
+                <h3>💰 جمع کل سناریو A: $<span id="grandTotalA">0</span></h3>
+            </div>
 
-      <h3>نصب</h3>
-      <table class="table install">
-        <thead>
-          <tr><th>قلم</th><th>مدت</th><th>هزینه ($)</th><th>عملیات</th></tr>
-        </thead>
-        <tbody>
-          <tr><td contenteditable data-key="b.ins.item1"></td><td contenteditable data-key="b.ins.time1"></td><td contenteditable data-key="b.ins.cost1"></td><td></td></tr>
-          <tr><td contenteditable data-key="b.ins.item2"></td><td contenteditable data-key="b.ins.time2"></td><td contenteditable data-key="b.ins.cost2"></td><td></td></tr>
-          <tr><td contenteditable data-key="b.ins.item3"></td><td contenteditable data-key="b.ins.time3"></td><td contenteditable data-key="b.ins.cost3"></td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="2">جمع نصب</td><td contenteditable data-key="b.ins.total">765</td><td></td></tr>
-        </tfoot>
-      </table>
+            <div class="section">
+                <h3>نگهداری سالانه</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="maintenanceA">
+                        <!-- ردیف‌ها با JavaScript اضافه می‌شوند -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>جمع نگهداری سالانه</strong></td>
+                            <td class="total" id="totalMaintenanceA">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('maintenanceA', 'maintenance')">+ افزودن ردیف</button>
+            </div>
+        </div>
 
-      <h3>توسعه نرم‌افزار</h3>
-      <table class="table dev">
-        <thead>
-          <tr><th>فاز</th><th>زمان</th><th>هزینه ($)</th><th>عملیات</th></tr>
-        </thead>
-        <tbody>
-          <tr><td contenteditable data-key="b.dev.r1.phase"></td><td contenteditable data-key="b.dev.r1.time"></td><td contenteditable data-key="b.dev.r1.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r2.phase"></td><td contenteditable data-key="b.dev.r2.time"></td><td contenteditable data-key="b.dev.r2.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r3.phase"></td><td contenteditable data-key="b.dev.r3.time"></td><td contenteditable data-key="b.dev.r3.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r4.phase"></td><td contenteditable data-key="b.dev.r4.time"></td><td contenteditable data-key="b.dev.r4.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r5.phase"></td><td contenteditable data-key="b.dev.r5.time"></td><td contenteditable data-key="b.dev.r5.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r6.phase"></td><td contenteditable data-key="b.dev.r6.time"></td><td contenteditable data-key="b.dev.r6.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r7.phase"></td><td contenteditable data-key="b.dev.r7.time"></td><td contenteditable data-key="b.dev.r7.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r8.phase"></td><td contenteditable data-key="b.dev.r8.time"></td><td contenteditable data-key="b.dev.r8.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r9.phase"></td><td contenteditable data-key="b.dev.r9.time"></td><td contenteditable data-key="b.dev.r9.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.dev.r10.phase"></td><td contenteditable data-key="b.dev.r10.time"></td><td contenteditable data-key="b.dev.r10.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.model.r1.phase"></td><td contenteditable data-key="b.model.r1.time"></td><td contenteditable data-key="b.model.r1.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.model.r2.phase"></td><td contenteditable data-key="b.model.r2.time"></td><td contenteditable data-key="b.model.r2.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.model.r3.phase"></td><td contenteditable data-key="b.model.r3.time"></td><td contenteditable data-key="b.model.r3.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.model.r4.phase"></td><td contenteditable data-key="b.model.r4.time"></td><td contenteditable data-key="b.model.r4.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="b.model.r5.phase"></td><td contenteditable data-key="b.model.r5.time"></td><td contenteditable data-key="b.model.r5.cost"></td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="2">جمع توسعه (27 هفته)</td><td contenteditable data-key="b.dev.total">36600</td><td></td></tr>
-        </tfoot>
-      </table>
+        <!-- سناریو B -->
+        <div class="tab-content" id="scenarioB">
+            <h2>🌍 سناریو B: GPS + Beacon ⭐</h2>
 
-      <p class="sum">💰 جمع کل سناریو B: <strong contenteditable data-key="b.total">38465</strong> دلار</p>
+            <div class="section">
+                <h3>سخت‌افزار</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>تعداد</th>
+                            <th>قیمت واحد ($)</th>
+                            <th>جمع ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hardwareB"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>جمع سخت‌افزار</strong></td>
+                            <td class="total" id="totalHardwareB">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('hardwareB', 'hardware')">+ افزودن ردیف</button>
+            </div>
 
-      <h3>نگهداری سالانه</h3>
-      <table class="table maintenance">
-        <thead><tr><th>نگهداری سالانه</th></tr></thead>
-        <tbody>
-          <tr><td>تعویض باتری | <span contenteditable data-key="b.m.battery">80</span> $</td></tr>
-          <tr><td>بازرسی فصلی | <span contenteditable data-key="b.m.season">180</span> $</td></tr>
-          <tr><td>بروزرسانی اپ | <span contenteditable data-key="b.m.app">1200</span> $</td></tr>
-          <tr><td>پشتیبانی فنی | <span contenteditable data-key="b.m.support">800</span> $</td></tr>
-          <tr><td>سرور و Cloud | <span contenteditable data-key="b.m.cloud">900</span> $</td></tr>
-          <tr><td>جمع نگهداری سالانه | <span contenteditable data-key="b.m.total">3160</span> $</td></tr>
-        </tbody>
-      </table>
-    </section>
+            <div class="section">
+                <h3>نصب</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>مدت</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="installationB"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>جمع نصب</strong></td>
+                            <td class="total" id="totalInstallationB">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('installationB', 'installation')">+ افزودن ردیف</button>
+            </div>
 
-    <section class="scenario" id="scenario-c">
-      <h2>⭐ سناریو C: Beacon حرفه‌ای + GPS ⭐⭐</h2>
-      <h3>سخت‌افزار</h3>
-      <table class="table hardware">
-        <thead>
-          <tr><th>قلم</th><th>تعداد</th><th>قیمت واحد ($)</th><th>جمع ($)</th><th>عملیات</th></tr>
-        </thead>
-        <tbody>
-          <tr><td contenteditable data-key="c.hw.item1"></td><td contenteditable data-key="c.hw.qty1"></td><td contenteditable data-key="c.hw.unit1"></td><td contenteditable data-key="c.hw.sum1">900</td><td></td></tr>
-          <tr><td contenteditable data-key="c.hw.item2"></td><td contenteditable data-key="c.hw.qty2"></td><td contenteditable data-key="c.hw.unit2"></td><td contenteditable data-key="c.hw.sum2">144</td><td></td></tr>
-          <tr><td contenteditable data-key="c.hw.item3"></td><td contenteditable data-key="c.hw.qty3"></td><td contenteditable data-key="c.hw.unit3"></td><td contenteditable data-key="c.hw.sum3">60</td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="3">جمع سخت‌افزار</td><td contenteditable data-key="c.hw.total">1104</td><td></td></tr>
-        </tfoot>
-      </table>
+            <div class="section">
+                <h3>توسعه نرم‌افزار</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>فاز</th>
+                            <th>زمان</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="developmentB"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>جمع توسعه</strong></td>
+                            <td class="total" id="totalDevelopmentB">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('developmentB', 'development')">+ افزودن ردیف</button>
+            </div>
 
-      <h3>نصب</h3>
-      <table class="table install">
-        <thead>
-          <tr><th>قلم</th><th>مدت</th><th>هزینه ($)</th><th>عملیات</th></tr>
-        </thead>
-        <tbody>
-          <tr><td contenteditable data-key="c.ins.item1"></td><td contenteditable data-key="c.ins.time1"></td><td contenteditable data-key="c.ins.cost1"></td><td></td></tr>
-          <tr><td contenteditable data-key="c.ins.item2"></td><td contenteditable data-key="c.ins.time2"></td><td contenteditable data-key="c.ins.cost2"></td><td></td></tr>
-          <tr><td contenteditable data-key="c.ins.item3"></td><td contenteditable data-key="c.ins.time3"></td><td contenteditable data-key="c.ins.cost3"></td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="2">جمع نصب</td><td contenteditable data-key="c.ins.total">630</td><td></td></tr>
-        </tfoot>
-      </table>
+            <div class="total-section">
+                <h3>💰 جمع کل سناریو B: $<span id="grandTotalB">0</span></h3>
+            </div>
 
-      <h3>توسعه نرم‌افزار</h3>
-      <table class="table dev">
-        <thead>
-          <tr><th>فاز</th><th>زمان</th><th>هزینه ($)</th><th>عملیات</th></tr>
-        </thead>
-        <tbody>
-          <tr><td contenteditable data-key="c.dev.r1.phase"></td><td contenteditable data-key="c.dev.r1.time"></td><td contenteditable data-key="c.dev.r1.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r2.phase"></td><td contenteditable data-key="c.dev.r2.time"></td><td contenteditable data-key="c.dev.r2.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r3.phase"></td><td contenteditable data-key="c.dev.r3.time"></td><td contenteditable data-key="c.dev.r3.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r4.phase"></td><td contenteditable data-key="c.dev.r4.time"></td><td contenteditable data-key="c.dev.r4.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r5.phase"></td><td contenteditable data-key="c.dev.r5.time"></td><td contenteditable data-key="c.dev.r5.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r6.phase"></td><td contenteditable data-key="c.dev.r6.time"></td><td contenteditable data-key="c.dev.r6.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r7.phase"></td><td contenteditable data-key="c.dev.r7.time"></td><td contenteditable data-key="c.dev.r7.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r8.phase"></td><td contenteditable data-key="c.dev.r8.time"></td><td contenteditable data-key="c.dev.r8.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r9.phase"></td><td contenteditable data-key="c.dev.r9.time"></td><td contenteditable data-key="c.dev.r9.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.dev.r10.phase"></td><td contenteditable data-key="c.dev.r10.time"></td><td contenteditable data-key="c.dev.r10.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.model.r1.phase"></td><td contenteditable data-key="c.model.r1.time"></td><td contenteditable data-key="c.model.r1.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.model.r2.phase"></td><td contenteditable data-key="c.model.r2.time"></td><td contenteditable data-key="c.model.r2.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.model.r3.phase"></td><td contenteditable data-key="c.model.r3.time"></td><td contenteditable data-key="c.model.r3.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.model.r4.phase"></td><td contenteditable data-key="c.model.r4.time"></td><td contenteditable data-key="c.model.r4.cost"></td><td></td></tr>
-<tr><td contenteditable data-key="c.model.r5.phase"></td><td contenteditable data-key="c.model.r5.time"></td><td contenteditable data-key="c.model.r5.cost"></td><td></td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td colspan="2">جمع توسعه (27 هفته)</td><td contenteditable data-key="c.dev.total">36600</td><td></td></tr>
-        </tfoot>
-      </table>
+            <div class="section">
+                <h3>نگهداری سالانه</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="maintenanceB"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>جمع نگهداری سالانه</strong></td>
+                            <td class="total" id="totalMaintenanceB">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('maintenanceB', 'maintenance')">+ افزودن ردیف</button>
+            </div>
+        </div>
 
-      <p class="sum">💰 جمع کل سناریو C: <strong contenteditable data-key="c.total">38334</strong> دلار</p>
+        <!-- سناریو C -->
+        <div class="tab-content" id="scenarioC">
+            <h2>⭐ سناریو C: Beacon حرفه‌ای + GPS ⭐⭐</h2>
 
-      <h3>نگهداری سالانه</h3>
-      <table class="table maintenance">
-        <thead><tr><th>نگهداری سالانه</th></tr></thead>
-        <tbody>
-          <tr><td>بازرسی فصلی | <span contenteditable data-key="c.m.season">150</span> $</td></tr>
-          <tr><td>بروزرسانی اپ | <span contenteditable data-key="c.m.app">1200</span> $</td></tr>
-          <tr><td>پشتیبانی فنی | <span contenteditable data-key="c.m.support">800</span> $</td></tr>
-          <tr><td>سرور و Cloud | <span contenteditable data-key="c.m.cloud">900</span> $</td></tr>
-          <tr><td>مانیتورینگ Cloud | <span contenteditable data-key="c.m.monitor">120</span> $</td></tr>
-          <tr><td>جمع نگهداری سالانه | <span contenteditable data-key="c.m.total">3170</span> $</td></tr>
-        </tbody>
-      </table>
-    </section>
+            <div class="section">
+                <h3>سخت‌افزار</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>تعداد</th>
+                            <th>قیمت واحد ($)</th>
+                            <th>جمع ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hardwareC"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>جمع سخت‌افزار</strong></td>
+                            <td class="total" id="totalHardwareC">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('hardwareC', 'hardware')">+ افزودن ردیف</button>
+            </div>
 
-    <section id="compare">
-      <h2>📊 مقایسه نهایی سناریوها</h2>
-      <table class="table compare">
-        <thead>
-          <tr><th>معیار</th><th>فقط Beacon</th><th>GPS + Beacon</th><th>Beacon حرفه‌ای + GPS</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>هزینه اولیه</td><td contenteditable data-key="cmp.cost.a">$20315</td><td contenteditable data-key="cmp.cost.b">$38465</td><td contenteditable data-key="cmp.cost.c">$38334</td></tr>
-          <tr><td>زمان اجرا</td><td contenteditable data-key="cmp.time.a">24 هفته</td><td contenteditable data-key="cmp.time.b">27 هفته</td><td contenteditable data-key="cmp.time.c">27 هفته</td></tr>
-          <tr><td>دقت</td><td contenteditable data-key="cmp.acc.a">1-3 متر</td><td contenteditable data-key="cmp.acc.b">0.5-2 متر</td><td contenteditable data-key="cmp.acc.c">0.5-1.5 متر</td></tr>
-          <tr><td>پوشش</td><td contenteditable data-key="cmp.cover.a">داخلی</td><td contenteditable data-key="cmp.cover.b">داخل + خارج</td><td contenteditable data-key="cmp.cover.c">داخل + خارج</td></tr>
-          <tr><td>نگهداری سالانه</td><td contenteditable data-key="cmp.mt.a">$3,200</td><td contenteditable data-key="cmp.mt.b">$3,160</td><td contenteditable data-key="cmp.mt.c">$3,170</td></tr>
-          <tr><td>ریسک GPS</td><td contenteditable data-key="cmp.gps.a">صفر</td><td contenteditable data-key="cmp.gps.b">متوسط</td><td contenteditable data-key="cmp.gps.c">متوسط</td></tr>
-          <tr><td>تجربه کاربری</td><td contenteditable data-key="cmp.ux.a">خوب</td><td contenteditable data-key="cmp.ux.b">عالی</td><td contenteditable data-key="cmp.ux.c">عالی</td></tr>
-        </tbody>
-      </table>
-    </section>
+            <div class="section">
+                <h3>نصب</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>مدت</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="installationC"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>جمع نصب</strong></td>
+                            <td class="total" id="totalInstallationC">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('installationC', 'installation')">+ افزودن ردیف</button>
+            </div>
 
-    <section id="timeline">
-      <h2>⏱️ زمان‌بندی پروژه</h2>
+            <div class="section">
+                <h3>توسعه نرم‌افزار</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>فاز</th>
+                            <th>زمان</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="developmentC"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>جمع توسعه</strong></td>
+                            <td class="total" id="totalDevelopmentC">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('developmentC', 'development')">+ افزودن ردیف</button>
+            </div>
 
-      <h3>سناریو A: فقط Beacon (24 هفته / 6 ماه)</h3>
-      <ul class="timeline">
-        <li><strong>ماه 1:</strong> تحلیل، طراحی UI/UX، شروع مدل 3D، خرید تجهیزات</li>
-        <li><strong>ماه 2:</strong> اتمام مدل 3D، شروع توسعه اپ Flutter</li>
-        <li><strong>ماه 3:</strong> ادامه توسعه اپ، ادغام Beacon SDK</li>
-        <li><strong>ماه 4:</strong> سیستم مسیریابی، نمایش نقشه 3D</li>
-        <li><strong>ماه 5:</strong> نصب و کالیبراسیون Beaconها</li>
-        <li><strong>ماه 6:</strong> تست جامع و راه‌اندازی نهایی</li>
-      </ul>
+            <div class="total-section">
+                <h3>💰 جمع کل سناریو C: $<span id="grandTotalC">0</span></h3>
+            </div>
 
-      <h3>سناریو B/C: GPS + Beacon (27 هفته / 6.75 ماه)</h3>
-      <ul class="timeline">
-        <li><strong>ماه 1:</strong> تحلیل، طراحی UI/UX، شروع مدل 3D</li>
-        <li><strong>ماه 2:</strong> اتمام مدل 3D، توسعه اپ (ماژول GPS)</li>
-        <li><strong>ماه 3:</strong> توسعه اپ (ماژول Beacon)</li>
-        <li><strong>ماه 4:</strong> ادغام GPS و Beacon، Fusion Algorithm</li>
-        <li><strong>ماه 5:</strong> نمایش نقشه 3D، نصب و کالیبراسیون</li>
-        <li><strong>ماه 6:</strong> تست میدانی گسترده، Debug و بهینه‌سازی</li>
-        <li><strong>ماه 7:</strong> تست نهایی و راه‌اندازی رسمی</li>
-      </ul>
-    </section>
+            <div class="section">
+                <h3>نگهداری سالانه</h3>
+                <table class="editable-table">
+                    <thead>
+                        <tr>
+                            <th>قلم</th>
+                            <th>هزینه ($)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="maintenanceC"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>جمع نگهداری سالانه</strong></td>
+                            <td class="total" id="totalMaintenanceC">0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="add-btn" onclick="addRow('maintenanceC', 'maintenance')">+ افزودن ردیف</button>
+            </div>
+        </div>
 
-    <div class="actions">
-      <button id="save-btn">💾 ذخیره تغییرات</button>
-      <button id="reset-btn">↩️ بازنشانی به حالت اولیه</button>
+        <!-- تب مقایسه -->
+        <div class="tab-content" id="comparison">
+            <h2>📊 مقایسه نهایی سناریوها</h2>
+            <div class="section">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>معیار</th>
+                            <th>فقط Beacon</th>
+                            <th>GPS + Beacon</th>
+                            <th>Beacon حرفه‌ای + GPS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>هزینه اولیه</strong></td>
+                            <td>$<span id="compA1">0</span></td>
+                            <td>$<span id="compB1">0</span></td>
+                            <td>$<span id="compC1">0</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>نگهداری سالانه</strong></td>
+                            <td>$<span id="compA2">0</span></td>
+                            <td>$<span id="compB2">0</span></td>
+                            <td>$<span id="compC2">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>⏱️ زمان‌بندی پروژه</h3>
+                <div class="timeline">
+                    <h4>سناریو A: فقط Beacon (24 هفته / 6 ماه)</h4>
+                    <ul>
+                        <li><strong>ماه 1:</strong> تحلیل، طراحی UI/UX، شروع مدل 3D، خرید تجهیزات</li>
+                        <li><strong>ماه 2:</strong> اتمام مدل 3D، شروع توسعه اپ Flutter</li>
+                        <li><strong>ماه 3:</strong> ادامه توسعه اپ، ادغام Beacon SDK</li>
+                        <li><strong>ماه 4:</strong> سیستم مسیریابی، نمایش نقشه 3D</li>
+                        <li><strong>ماه 5:</strong> نصب و کالیبراسیون Beaconها</li>
+                        <li><strong>ماه 6:</strong> تست جامع و راه‌اندازی نهایی</li>
+                    </ul>
+
+                    <h4>سناریو B/C: GPS + Beacon (27 هفته / 6.75 ماه)</h4>
+                    <ul>
+                        <li><strong>ماه 1:</strong> تحلیل، طراحی UI/UX، شروع مدل 3D</li>
+                        <li><strong>ماه 2:</strong> اتمام مدل 3D، توسعه اپ (ماژول GPS)</li>
+                        <li><strong>ماه 3:</strong> توسعه اپ (ماژول Beacon)</li>
+                        <li><strong>ماه 4:</strong> ادغام GPS و Beacon، Fusion Algorithm</li>
+                        <li><strong>ماه 5:</strong> نمایش نقشه 3D، نصب و کالیبراسیون</li>
+                        <li><strong>ماه 6:</strong> تست میدانی گسترده، Debug و بهینه‌سازی</li>
+                        <li><strong>ماه 7:</strong> تست نهایی و راه‌اندازی رسمی</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </main>
 
-  <footer>
-    <small>© اراضی عباس‌آباد — نسخه بازسازی‌شده برای GitHub Pages</small>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
