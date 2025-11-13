@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Lahze';
+  src: url('assets/fonts/Lahze-Bold.woff2') format('woff2');
+}
+
+body {
+  background-color: #0d0d13;
+  color: #e7e7e7;
+  font-family: 'Lahze', sans-serif;
+  direction: rtl;
+  margin: 2rem auto;
+  max-width: 900px;
+  line-height: 1.8;
+}
+
+h1 {
+  color: #c8a700;
+  border-bottom: 2px solid #20204A;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #7f8fff;
+}
+
+h3 {
+  margin-top: 1.4rem;
+  color: #9fa9ff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th {
+  background-color: #20204A;
+  color: #f2f2f2;
+}
+
+th, td {
+  border: 1px solid #2e2e3b;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+tfoot {
+  background-color: rgba(200,167,0,0.15);
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: '⚙ ';
+  margin-top: 0.4rem;
+  padding-right: 1rem;
+}
